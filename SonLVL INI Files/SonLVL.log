@@ -1,0 +1,34 @@
+Operating system: Microsoft Windows NT 6.2.9200.0
+Opening INI file "C:\Users\andre\Downloads\Sonic 3 Fix Version\SonLVL INI Files\SonLVL.ini"...
+Game type is S3K.
+Loading Azure Lake...
+Loading 16x16 blocks from file "../Levels/ALZ/Blocks/Primary.bin", using compression Kosinski...
+Loading 8x8 tiles from file "../Levels/ALZ/Tiles/Primary.bin", using compression KosinskiM...
+Loading 128x128 chunks from file "../Levels/ALZ/Chunks/Primary.bin", using compression Kosinski...
+Loading layout from file "../Levels/ALZ/Layout/1.bin", using compression Uncompressed...
+Loading palette file "../General/Sprites/Sonic/Palettes/SonicAndTails.bin"...
+Source: 0 Destination: 0 Length: 16
+Loading palette file "../Levels/Misc/Palettes/2P Level Secondary.bin"...
+Source: 0 Destination: 16 Length: 16
+Loading palette file "../Levels/ALZ/Palettes/Main.bin"...
+Source: 16 Destination: 32 Length: 32
+System.AggregateException: One or more errors occurred. ---> System.ArgumentException: Source array was not long enough. Check srcIndex and length, and the array's lower bounds.
+   at System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   at SonicRetro.SonLVL.API.ByteConverter.ToUInt16(Byte[] value, Int32 startIndex) in D:\Programs\SonLVL\SonLVLAPI\ByteConverter.cs:line 53
+   at SonicRetro.SonLVL.API.LevelData.LoadLevelColInds() in D:\Programs\SonLVL\SonLVLAPI\LevelData.cs:line 748
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks, Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.WaitAll(Task[] tasks, Int32 millisecondsTimeout)
+   at System.Threading.Tasks.Parallel.Invoke(ParallelOptions parallelOptions, Action[] actions)
+   at System.Threading.Tasks.Parallel.Invoke(Action[] actions)
+   at SonicRetro.SonLVL.API.LevelData.LoadLevel(String levelname, Boolean loadGraphics) in D:\Programs\SonLVL\SonLVLAPI\LevelData.cs:line 184
+   at SonicRetro.SonLVL.GUI.MainForm.backgroundLevelLoader_DoWork(Object sender, DoWorkEventArgs e) in D:\Programs\SonLVL\SonLVL\MainForm.cs:line 574
+---> (Inner Exception #0) System.ArgumentException: Source array was not long enough. Check srcIndex and length, and the array's lower bounds.
+   at System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   at SonicRetro.SonLVL.API.ByteConverter.ToUInt16(Byte[] value, Int32 startIndex) in D:\Programs\SonLVL\SonLVLAPI\ByteConverter.cs:line 53
+   at SonicRetro.SonLVL.API.LevelData.LoadLevelColInds() in D:\Programs\SonLVL\SonLVLAPI\LevelData.cs:line 748
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()<---
+

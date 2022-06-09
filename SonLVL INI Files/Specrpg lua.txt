@@ -1,0 +1,5 @@
+
+if not SPECRPG then return end
+
+charstats["skinname"] = {HP, ATK, DEF}
+levelupstats["skinname"] = {HP, ATK, DEF}
